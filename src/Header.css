@@ -1,0 +1,28 @@
+.header {
+  background-color: yellow;
+}
+li {
+    display: inline;
+    border: 1;
+    border-color: black;
+    margin-left: 10%;
+    background-color: #009900;
+    padding: 10px;
+}
+
+
+  h1 {
+    text-align: center;
+  }
+
+  table,td,th {
+    text-align: center;
+    margin-left: 13%;
+    border: 1px solid black;
+    
+  }
+
+  th {
+    background-color: #000099;
+    color: white;    
+  }
