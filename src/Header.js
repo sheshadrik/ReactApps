@@ -1,22 +1,32 @@
+import { Link, Outlet } from 'react-router-dom';
 import './Header.css';
+import React from 'react';
 
 
-const Header = () => {
-    const navItems = ["Home","About Us","Services","Contact us","Careers"];
+function Header() {
+    const navItems = [{ name: "Home", path: '/' },
+    { name: "About Us", path: '/about' },
+    { name: "Services", path: '/services' },
+    { name: "Contact us", path: '/contact' },
+    { name: "Careers", path: '/careers' },
+    { name: "Sign Up", path: '/signup'}];
 
     const prepareNavItems = () => {
-        return navItems.map(name => {
-            return <li key={name}><a href="#">{name}</a></li>;
+        return navItems.map(navItem => {
+            return <li key={navItem.name}><Link to={navItem.path}>{navItem.name}</Link></li>;
         })
     }
 
-    return (<div className='header'>
+    return (<React.Fragment><div className='header'>
     <nav>
       <ul>
       {prepareNavItems()}        
       </ul>
     </nav>
-    </div>);
+    <Outlet/>
+    </div>
+     </React.Fragment>
+    );
 }
 
 export default Header;
